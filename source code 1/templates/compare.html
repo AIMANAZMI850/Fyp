@@ -1,0 +1,66 @@
+{% extends "base.html" %}
+{% block content %}
+<body >
+<header>
+ <link href="../static/css/styles.css" rel="stylesheet" />
+ <div class="row">
+ <div class="col-lg-11 ml-auto mr-auto mt-3">
+   <div class="card shadow mb-4 border">
+     <div class="card-header" style="background-color: #ff00dd;">
+       <i class="fas fa-chart-bar me-1"></i>
+       Isolation Forest
+     </div>
+     <div class="card-body">
+       <canvas id="myBarChart" width="50%" height="0"></canvas>
+     </div>
+     <div class="text-center">
+       <img class="img-fluid px-3 px-sm-4 mt-3 mb-4" style="width: 25rem;" src="../static/image/if.PNG">
+     </div>
+     <p align="justify" style="padding: 12px;">
+       <i>
+           First, the dataset is split into training and testing sets using a 70:30 ratio. An Isolation Forest algorithm is used to identify and remove outliers in the training dataset,
+           with a contamination parameters of 0.1. Then a Linear Regression model is fit to the updated training dataset, and the model is evaluated using the testing dataset.In this 
+           process,the mean absolute error (MAE) is calculated.The output shows that the original training dataset had 5752 rows and 12 columns and after removing outliers,the updated 
+           training dataset has 5176 rows and 12 columns.The value of MAE is 0.154.The resulting plot shows the random data points with a few points highlighted in red,indicating that 
+           they are the abnormal points.
+       </i>
+     </p>
+   </div>
+ </div>
+  <div class="col-lg-11 ml-auto mr-auto mt-3">
+    <div class="card shadow mb-4 border">
+      <div class="card-header" style="background-color: #ADD8E6;">
+        <i class="fas fa-chart-bar me-1"></i>
+        One SVM
+        
+      </div>
+      <div class="card-body">
+        <canvas id="myBarChart" width="50%" height="0"></canvas>
+      </div>
+      <div class="text-center">
+        <img class="img-fluid px-3 px-sm-4 mt-3 mb-4" style="width: 25rem;" src="../static/image/1svm.png">
+      </div>
+      <p align="justify" style="padding: 12px;">
+        <i>
+            The diagram shows the scatter plot of the original and updated training dataset.The datasets were split into training and testing sets using a 70:30 ratio.It shows that the training datasets already removed some outliers,reducing the number or rows
+            from 5752 to 5693. The MAE value using this method is 0.153 indicating that the model is performing well. Outliers are predicted using the ONE-Class SVM model and a color map 
+            is defined for use in a scatter plot. The predicted outliers are plotted in a different color which are blue and red. Red color indicating the outliers.
+        </i>
+      </p>
+    </div>
+  </div>
+</div>
+
+   
+  
+		
+</header>
+
+
+
+    	
+{% endblock %}
+	
+	
+
+</body>

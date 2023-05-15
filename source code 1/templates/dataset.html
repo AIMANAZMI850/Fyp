@@ -1,0 +1,58 @@
+{% extends "base.html" %}
+
+{% block content %}
+<head>
+
+  <title>Dataset</title>
+  
+  <link href="../static/css/styles.css" rel="stylesheet" />
+  
+  <style>
+      table {
+        border-collapse: collapse;
+        width: 100%;
+        overflow-y: scroll;
+        max-height: 500px;
+     }
+      th, td {
+      font-family: Arial, sans-serif;
+         text-align: center;
+         padding: 8px;
+         border: 2px solid black;
+      }
+      tr:nth-child(even) {
+      background-color: #f2f2f2; 
+      
+   </style>
+   
+</head>
+<body>
+  <div class="container-fluid px-4">
+      <div>
+          <h4>Dataset</h4>
+      </div>
+      <div>
+          <a class="btn btn-info" href="/crud">
+            <span>Back</span>
+          </a>
+      </div>
+
+    <div class="table-container center-table">
+      <table class="table">
+        <thead>
+          
+        </thead>
+        <tbody>
+          {{ data | safe }}
+        </tbody>
+      </table>
+    </div>
+    
+    <!-- Pagination links -->
+   <div class="pagination">
+      {{ pagination.links }}
+    </div>
+  </div>
+  
+</body>
+{% endblock %}
